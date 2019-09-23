@@ -4,7 +4,6 @@ $sql="select * from btest";
 
 //query并不能真正的查询出出来  mysql_fetch_all才会
 $res=$conn->query($sql);
-
 $res=mysqli_fetch_all($res,MYSQLI_NUM);
 
 $data=[];
