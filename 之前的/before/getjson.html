@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>进行跨域</title>
+</head>
+<body>
+
+</body>
+</html>
+
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+	　　//测试跨域请求连接
+	　　var requestUrl = "http://www.weather.com.cn/adat/sk/101110101.html";
+	　　//这里一定要注意，实际请求的url其实是以参数形式从eezzo.com读取的，因此我们都要对url进行编码，使用encodeURI方法即可
+	　　$.getJSON("http://eezzo.com/API/CD", { url: encodeURI(requestUrl) }, function(json) {
+	　　　　alert(json);
+	　　});
+	});
+</script>

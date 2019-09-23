@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>测试</title>
+</head>
+<body>
+	<p id="aa">我会消失</p>
+	<p>继续点我</p>
+	<p>接着点我</p>
+	<form>
+		<input type="button" name="ccc" value="确定" id="vvv">
+	</form>
+
+	<div id="div1">xccc</div>
+
+</body>
+</html>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+	  // 回顾下
+	  $("#aa").click(function(){
+	    $(this).hide();
+	  });
+
+	  // load函数
+	  $("#vvv").click(function(){
+	  	$("#div1").load("./aa.html #aa");
+	  	alert("aaaaaa");
+	  });
+	});
+
+</script>

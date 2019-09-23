@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="utf-8">
+	</head>
+<body>
+	<div>
+		<button id="noback">按钮</button>
+		<hr>
+		<button id="hasbac">按钮</button>
+	</div>
+</body>
+</html>
+
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<!-- 不用回调的 -->
+<!-- <script type="text/javascript">
+	var obje = {
+		init:function(){
+			this.eventbind();
+		},
+		eventbind:function(){
+			$("#noback").click(function(){
+				alert("1");
+			})
+			// 还没出现111呢  已经弹出1了
+	        alert("2 没有弹出1 应该先弹出1的");
+		}
+	}
+	$(document).ready(function(){
+		obje.init();
+	})
+</script> -->
+
+<!-- 用回调的 -->
+<script type="text/javascript">
+
+	var hasbac = {
+		main:"主函数",
+		back:"回调函数",
+		init:function(){
+			this.eventbind();
+		},
+
+		eventbind:function(){
+			
+			// 把callback让入了tanchu方法中，就会顺序执行了
+			// 如果直接写会导致
+			$("#hasbac").click(function(){
+				hasbac.tanchu("点击",hasbac.callback);
+			})
+			// alert(hasbac.back);
+			// window.location.reload();
+		},
+
+		// 以下两个就是回调函数的写法
+		tanchu:function(msg,func){
+			alert(msg);
+ 			alert(hasbac.main);
+
+			if (typeof hasbac.callback == "function"){
+				hasbac.callback();
+			}
+		},
+
+		callback:function(){
+			alert(hasbac.back);
+			window.location.reload();
+		},
+	}
+	$(document).ready(function(){
+		hasbac.init();
+	})
+</script>
+

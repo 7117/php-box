@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+    <form>
+        <div>弹出</div>
+    </form>
+    <button>确定</button>
+</body>
+</html>
+
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script type="text/javascript">
+    $("button").click(function(){
+        console.log("aaaaa");
+        $.getJSON("http://bb.bb.bb/data.php?aaaa=111",function(jsondata){
+            alert("aaa");
+        });
+    });
+
+</script>

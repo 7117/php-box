@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>倒计时 按钮失效</title>
+</head>
+<body onload="secfunc()">
+	<form>
+		<input type="button" name="button" id="one" value="确定" />
+	</form>
+</body>
+</html>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script type="text/javascript">
+		var sec=10000;
+		var timer=null;
+		var one=null;
+		function secfunc(){
+			console.log(sec);
+			sec=sec-1000;
+			
+			if(sec<0){
+				one=$("#one");
+				one.attr('disabled',"true");
+				alert("time out");
+	            clearTimeout(timer);
+			}else{
+				timer=setTimeout("secfunc(sec)",1000);
+			}
+		}
+</script>

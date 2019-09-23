@@ -1,0 +1,219 @@
+body{
+    width: 100%;
+    height: 100%;
+    font-size: 14px;
+    font-family: 'Microsoft Yahei',PingFangSC,sans-serif;
+    color: #333;
+    background: #f3f3f3;
+}
+html, body, span,form, p, div, h1, h2, h3, h4, h5, h6,ul,dl,dt,dd,em,i{
+    -webkit-text-size-adjust: none;
+    -webkit-font-smoothing:antialiased;
+    font-weight: normal;
+    font-style: normal;
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+}
+.maxwidth{
+    max-width: 1000px;
+    margin: 0 auto;
+}
+.clear{
+    clear: both;
+}
+.flex-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+input[type='text'],input[type='password']{
+    display: inline-block;
+    border: 1px solid #ddd;
+    background: #fff;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 10px;
+    border-radius: 3px;
+    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    box-sizing: border-box;
+}
+input[type='text']:focus,
+textarea:focus{
+    outline:2px solid #99d8f5;
+    border-color:#7bbff2;
+    background-color:#fffbde;
+    box-shadow: 0 0 4px #99d8f5;
+}
+textarea{
+    border: 1px solid #ddd;
+    background: #fff;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+button{
+    background: #00a8ee;
+    color: #ffffff;
+    font-size: 20px;
+    height: 40px;
+    padding: 0 20px;
+    border-radius: 3px;
+}
+
+#footer{
+    margin: 20px auto;
+    text-align: center;
+    font-size: 14px;
+    line-height: 30px;
+    color: #888;
+}
+
+/*分页*/
+.pager{
+    font-size: 14px;
+    color: #505050;
+    line-height: 30px;
+    margin: 20px auto;
+}
+.pager ul{
+    text-align: center;
+}
+.pager ul li{
+    margin: 0 6px;
+    display: inline-block;
+    vertical-align: middle;
+}
+.pager a{
+    position: relative;
+    float: left;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 10px;
+    margin-left: -1px;
+    text-decoration: none;
+    background: #e8e8e8;
+    color: #333;
+    border-radius: 3px;
+}
+.pager a.current{
+    color: #ffffff;
+    background: #dd0000;
+}
+.pager a:hover{
+    color: #ffffff;
+    background: #dd0000;
+    text-decoration: none;
+}
+.pager select{
+    height: 30px;
+    line-height: 30px;
+}
+.bodywrap{
+    width: 1000px;
+    margin: 0 auto;
+}
+
+/*index*/
+.headernav{
+    height: 180px;
+    position: relative;
+    overflow: hidden;
+}
+.headernav div{
+    position: absolute;
+    top: 40px;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+}
+.headernav div h2{
+    font-size: 48px;
+    text-shadow: 2px 2px 4px #999;
+}
+.headernav div p{
+    line-height: 36px;
+    font-size: 18px;
+}
+.msgwrap{
+    margin-top: 20px;
+    overflow: hidden;
+}
+.listwrap{
+    width:65%;
+    padding: 2%;
+    background: #ffffff;
+    border-radius: 3px;
+    float: left;
+    min-height: 320px;
+    overflow: hidden;
+}
+.msglist{
+    margin-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px dotted #e8e8e8;
+}
+.msglist h3{
+    font-size: 16px;
+    font-weight: 500;
+}
+.msglist h3 em{
+    float: right;
+    color: #999;
+    font-size: 14px;
+}
+.msglist p{
+    margin-top: 10px;
+    color: #666;
+}
+.msglist p a{
+    display: inline-block;
+    margin-right: 12px;
+    padding: 3px 10px;
+    border-radius: 3px;
+    background: #f47f00;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 12px;
+}
+.msglist p a.edit{
+    background: #008ae8;
+}
+.msglist p a.del{
+    background: #dd0000;
+}
+.msglist p.replyc{
+    background: #fff0da;
+    padding: 10px;
+    border-radius: 3px;
+}
+.msglist p.replyc>span{
+    color: #999;
+    display: block;
+    margin-bottom: 6px;
+}
+
+.msgform{
+    width:33%;
+    padding: 10px 1%;
+    float: right;
+    display: inline-block;
+    background: #dcecf4;
+    border-radius: 3px;
+    padding-bottom: 20px;
+}
+.msgform p{
+    width: 100%;
+    margin-top: 10px;
+}
+.msgform input,.msgform textarea{
+    width: 100%;
+}
+.msgform p#errmsg{
+    line-height: 30px;
+    color: #ff0000;
+}
