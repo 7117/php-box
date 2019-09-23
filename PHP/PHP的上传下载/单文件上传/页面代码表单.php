@@ -6,6 +6,7 @@
 </head>
 <body>
 <form action="doAction3.php" method="post" enctype="multipart/form-data">
+	
 <!-- <input type="hidden" name="MAX_FILE_SIZE" value='176942' /> -->
 请选择您要上传的文件：<input type="file" name='myFile' />
 <!-- <input type="file" name="myFile"  accept="image/jpeg,image/gif,image/png"/><br /> -->
