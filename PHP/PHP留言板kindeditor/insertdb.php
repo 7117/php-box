@@ -1,5 +1,5 @@
 <?php
-include './web/mysqli.php';
+include './mysqlifunc.php';
 $tit=$_POST["title"];
 $con=$_POST["content"];
 var_dump($tit,$con);

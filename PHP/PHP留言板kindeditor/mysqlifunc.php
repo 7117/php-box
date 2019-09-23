@@ -1,5 +1,5 @@
 <?php
-class mysqli
+class mysqlifunc
 {
     public $host;
     public $user;
@@ -26,7 +26,6 @@ class mysqli
         $this->password = $password;
         $this->charset = $charset;
         $this->database = $database;
-        mysqli_close($link);
     }
 
     /**
