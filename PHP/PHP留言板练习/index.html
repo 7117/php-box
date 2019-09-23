@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>留言板</title>
+    <style type="text/css">
+        .table{
+            width:500px;
+            height:500px;
+            border: 2px solid blue;
+        }
+    </style>
+</head>
+<body>
+    <form name="form" action="insert.php" method="post">
+        <table type="text" align="center" class="table">
+            <input type="hidden" name="id" >
+            <tr>
+                <td>标题</td>
+                <td><input type="text" name="title" ></td>
+            </tr>
+            <tr>
+                <td>按钮</td>
+                <td><input type="submit" name="提交" ></td>
+                <td><input type="reset" name="重置" ></td>
+                <td><button><a href="show.php">展示</a></button></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
