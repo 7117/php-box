@@ -1,18 +1,15 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: sunxi
- * Date: 2019/9/23
- * Time: 17:47
- */
+//内存与内存峰值
 $a=memory_get_usage();
 var_dump($a);
 echo "<br>";
 
 $a=memory_get_peak_usage();
-var_dump($a);
+var_dump($a/1024/1024);
 echo "<br>";
 
+//cpu的情况使用
 $a=getrusage();
 var_dump($a);
 echo "<br>";
+
