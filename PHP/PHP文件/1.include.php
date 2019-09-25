@@ -9,6 +9,7 @@ require "d.php";
 include "a.php";
 require "a.php";
 
+
 // int(1111) int(1111) int(1111) 
 // Warning: include(a.php): failed to open stream: No such file or directory in D:\phpstudy\PHPTutorial\WWW\CodePractice\PHP\PHP文件\1.include.php on line 9
 
