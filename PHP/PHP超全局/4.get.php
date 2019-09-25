@@ -1,15 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>ttt</title>
 </head>
 <body>
-	<button style="width:200px;height:200px"><a href="4.get.php?name=aaaa"></a></button>
+	<form name="aaaa" method="get" action="<?php echo $_SERVER['PHP_SELF'];?>">
+		<input type="text" name="name">
+		<input type="submit" name="按钮">
+	</form>
+
+	<?php
+	if(isset($_GET['name'])){
+		var_dump($_GET['name']);
+	}else{
+	}
+	
+	?>
+
 </body>
 </html>
-
-
-<?php
-@$a=$_GET['name'];
-var_dump($a);
-?>
