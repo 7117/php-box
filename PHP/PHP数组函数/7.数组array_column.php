@@ -23,11 +23,11 @@ print_r($b);
 
 
 // array_column的使用必须是二维数组哦！！！！
-$a = [[
+$a = [[[
     'id' => 5698,
     'first_name' => 'Peter',
     'last_name' => 'Griffin',
- ]];
+ ]]];
 echo "<br>";
-$b=array_column($a, 'first_name');
+$b=array_column($a[0], 'first_name');
 print_r($b);
