@@ -1,5 +1,8 @@
 <?php
 
-
-//fopen也可以进行创建文件哈
-$myfile = fopen("testfile.txt", "w");
+$a=fopen("ddd.php","w");
+$aaa="aaa";
+fwrite($a,$aaa);
+fwrite($a,$aaa);
+fwrite($a,$aaa);
+fclose($a);
