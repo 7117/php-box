@@ -1,9 +1,10 @@
-<html>
-<body>
+<?php
+session_start();
+//设置值
+$_SESSION['oiii']="sddd1";
+?>
 
-Welcome :<?php echo $_GET["name"]; ?>
-<br>
-You are :<?php echo $_GET["age"]; ?>
+<?php
+var_dump($_SESSION['oiii']);
 
-</body>
-</html>
+?>
