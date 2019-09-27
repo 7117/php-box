@@ -4,6 +4,7 @@ echo "111";
 if($_FILES['file']['error']!=1){
     echo "aaaa";
     echo "<br>";
+    
     $a=$_FILES['file'];
     print_r($a);
     $nowsite="D:\phpstudy\PHPTutorial\WWW\CodePractice\PHP\PHP文件函数\uplod";
@@ -13,7 +14,7 @@ if($_FILES['file']['error']!=1){
         echo "success";
         echo "<br>";
     }
-    
+
     echo "<br>";
     echo "ddd";
     echo "<br>";
