@@ -1,12 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="d4432b50-4829-44c9-b997-f0b22f1c0243" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.htaccess" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PHP/PHP变量/1.static.php" beforeDir="false" afterPath="$PROJECT_DIR$/PHP/PHP变量/1.static.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bl_offline_replenish/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../bl_offline_replenish/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bl_offline_replenish/.idea/bl_offline_replenish.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../bl_offline_replenish/.idea/bl_offline_replenish.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bl_offline_replenish/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../bl_offline_replenish/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bl_offline_replenish/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../bl_offline_replenish/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bl_offline_replenish/php/application/Config/config.url.ini.dev" beforeDir="false" afterPath="$PROJECT_DIR$/../bl_offline_replenish/php/application/Config/config.url.ini.dev" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bl_offline_replenish/php/application/modules/Api/controllers/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/../bl_offline_replenish/php/application/modules/Api/controllers/LoginController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bl_offline_replenish/php/application/modules/Default/views/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../bl_offline_replenish/php/application/modules/Default/views/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bl_offline_replenish/php/public/static" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution>
+      <executable />
+    </execution>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../bl_offline_replenish" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../bl_offline_replenish" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.EditorConfig" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
