@@ -7,3 +7,5 @@ var_dump("{$a}");
 echo "<br>";
 var_dump("$a");
 echo "<br>";
+// string(7) "sasddss" 
+// string(7) "sasddss" 
