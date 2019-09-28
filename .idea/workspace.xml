@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d4432b50-4829-44c9-b997-f0b22f1c0243" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../bl_offline_replenish/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../bl_offline_replenish/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../bl_offline_replenish/.idea/bl_offline_replenish.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../bl_offline_replenish/.idea/bl_offline_replenish.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../bl_offline_replenish/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../bl_offline_replenish/.idea/modules.xml" afterDir="false" />
@@ -23,7 +22,7 @@
     </execution>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../bl_offline_replenish" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -57,7 +56,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
