@@ -16,3 +16,9 @@ $aa=str_replace('a','v','gvaaaaaavaaa',$count2);
 var_dump($aa);
 echo "<br>";
 var_dump($count2);
+
+// string(3) "gvv"
+// int(1)
+// string(12) "gvvvvvvvvvvv"
+// int(9)
+
