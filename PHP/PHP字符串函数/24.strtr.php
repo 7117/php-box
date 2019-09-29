@@ -14,6 +14,7 @@ $a=[
 	"b"=>"ffff"
 ];
 
+
 $r=strtr("aaaxxxxbbb",$a);
 echo "<br>";
 var_dump($r);
