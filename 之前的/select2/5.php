@@ -1,1 +1,0 @@
-<button type="button" class="btn btn-link btn-xs pull-right btn-edit" id="btn_edit_<?=$res->id?>" data-id="<?=$res->id?>" data-name="<?=Html::encode($res->name)?>" data-src="<?=$res_domain . '/' . $res->content?>" data-tags="<?=implode(',', $res->TagsArray)?>" data-ctime="<?=$res->ctime?>" data-cuser="<?=$res->creater->realname?>"><span class="fa fa-edit"></span> 编辑</button>
