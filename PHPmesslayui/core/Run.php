@@ -59,7 +59,7 @@ final class Run{
         include COMMON_PATH.'config.php';
         //加载网站的配置信息
         include CORE_PATH.'/Site.class.php';
-        //加载
+        //加载控制类
         $appfile=CONTROLLER_PATH.'/'.CONTROLLER.'Controller.class.php';
         if(is_file($appfile)){
             require $appfile; //载入文件

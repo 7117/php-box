@@ -10,7 +10,7 @@ class Site extends Controller{
     //网站的配置信息
     static public function siteConfig(){
         $config=array(
-            'sitename'=>'简单留言本',
+            'sitename'=>'留言本',
             'siteurl' =>APP_URL,
             'imgurl'=>APP_URL.'/public/img',
             'cssurl'=>APP_URL.'/public/css',

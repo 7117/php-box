@@ -13,7 +13,7 @@
     <div class="headernav">
         <img src="{$config.imgurl}/banner.jpg" alt="">
         <div>
-            <h2>PT简易留言本</h2>
+            <h2>留言本</h2>
             <p>简单的PHP+MYSQL+MVC架构，适用于新手如何快速实战PHP之用</p>
         </div>
     </div>
@@ -48,7 +48,7 @@
     </div>
 
     <footer id="footer">
-        CopyRight 2015-2019 www.phpteach.com ,All Rights Reserved
+        技术提供：逝者如此夫，不舍昼夜！！！
     </footer>
 
 </div>

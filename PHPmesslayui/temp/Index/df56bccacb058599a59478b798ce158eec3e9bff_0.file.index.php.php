@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-10-01 06:52:25
+/* Smarty version 3.1.33, created on 2019-10-01 08:07:10
   from 'D:\phpstudy\PHPTutorial\WWW\PHPCollection\PHPmesslayui\view\Index\index.php' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5d92f7a97e1d17_38016625',
+  'unifunc' => 'content_5d93092e0aff99_22960106',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'df56bccacb058599a59478b798ce158eec3e9bff' => 
     array (
       0 => 'D:\\phpstudy\\PHPTutorial\\WWW\\PHPCollection\\PHPmesslayui\\view\\Index\\index.php',
-      1 => 1569912737,
+      1 => 1569917228,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5d92f7a97e1d17_38016625 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5d93092e0aff99_22960106 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!doctype html>
 <html lang="en">
 <head>
@@ -39,8 +39,8 @@ function content_5d92f7a97e1d17_38016625 (Smarty_Internal_Template $_smarty_tpl)
         <img src="<?php echo $_smarty_tpl->tpl_vars['config']->value['imgurl'];?>
 /banner.jpg" alt="">
         <div>
-            <h2>PT简易留言本</h2>
-            <p>简单的PHP+MYSQL+MVC架构，适用于新手如何快速实战PHP之用</p>
+            <h2>留言本</h2>
+            <p></p>
         </div>
     </div>
 
@@ -93,7 +93,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
     </div>
 
     <footer id="footer">
-        CopyRight 2015-2019 www.phpteach.com ,All Rights Reserved
+        技术提供：逝者如此夫，不舍昼夜！！！
     </footer>
 
 </div>
