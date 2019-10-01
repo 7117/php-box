@@ -1,4 +1,5 @@
 <?php
+//差不多了！
 class IndexController extends Site {
 
     private $model;
