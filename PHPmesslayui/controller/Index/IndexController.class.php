@@ -1,41 +1,28 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: phpteach.com
- * Date: 2019/06/20
- * Time: 20:22
- * 如不能正常运行请加Q群：52581432
- * =====================================================================
- * 项目简介：
- * 本程序是用助于初学PHP者更加快速的加入到实战中，从实战中更快的掌握PHP知识，更快的成长。
- * 签于前期未得反馈，只展示留言本增、改、删功能，
- * 未加入后台管理及管理员权限功能，如果有这方面的需求或是想更加快速的学习PHP知识，
- * 欢迎加入PHP实战群一起学习与探讨。QQ群：52581432
- * 有什么问题也可以在群里面反馈。
- * =====================================================================
- * 以下是建数据库代码
- * <!----数据库代码开始----->
-CREATE TABLE `www_message` (
-`id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-`title` varchar(50) DEFAULT NULL COMMENT '标题',
-`content` varchar(200) DEFAULT '' COMMENT '内容',
-`reply_content` varchar(200) DEFAULT '' COMMENT '回复内容',
-`create_time` char(12) DEFAULT NULL COMMENT '创建时间',
-`reply_time` char(12) DEFAULT NULL COMMENT '回复时间',
-`uip` char(16) DEFAULT NULL COMMENT '用户IP',
-`status` tinyint(1) DEFAULT '0' COMMENT '是否审核',
-PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8;
- * <!----数据库代码结束--->
- */
+
+// CREATE TABLE `www_message` (
+// `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+// `title` varchar(50) DEFAULT NULL COMMENT '标题',
+// `content` varchar(200) DEFAULT '' COMMENT '内容',
+// `reply_content` varchar(200) DEFAULT '' COMMENT '回复内容',
+// `create_time` char(12) DEFAULT NULL COMMENT '创建时间',
+// `reply_time` char(12) DEFAULT NULL COMMENT '回复时间',
+// `uip` char(16) DEFAULT NULL COMMENT '用户IP',
+// `status` tinyint(1) DEFAULT '0' COMMENT '是否审核',
+// PRIMARY KEY (`id`)
+// ) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8;
+
 class IndexController extends Site {
 
     private $model;
     private $DB;
 
+    //构造函数
     public function __construct(){
         parent::__construct();
+        //指定模型
         $this->model=new Model();
+        //指定数据库
         $this->DB='www_message';
     }
 
@@ -43,18 +30,27 @@ class IndexController extends Site {
      * 首页列表
      */
     public function index(){
-        $page_size=3;//页显示数，根据自己需要调整
+        //页面长度
+        $page_size=3;
+        //获取页码
         $pageCurrent=!empty($_GET["p"])?$_GET['p']:'1';
+        //长度id
         $currentNum=($pageCurrent-1)*$page_size;
+        //sql
         $sql="select * from `".$this->DB."` ORDER BY id desc";
         $query=$sql." limit $currentNum,$page_size";
+        //mysqli_num_rows返回的是总的行数  里面的query是查询的结果
         $reccount=mysqli_num_rows($this->model->query($sql));
-
+        //这个返回的当前页面的数据
         $list=$this->model->query($query);
+
         $page=Pager('',$reccount,$page_size,$pageCurrent,10);
 
+        //指定数据变量   list变量
         $this->assign('list',$list);
+        //指定页码
         $this->assign('pager',$page);
+        //指定页面  指定index.php页面
         $this->display('index.php');
     }
 

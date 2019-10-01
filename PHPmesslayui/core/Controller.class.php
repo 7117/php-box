@@ -10,7 +10,9 @@ class Controller {
    private $_smarty;
 
     public function __construct() {
+        //初始化smartys
         $this->_smarty=new Smarty();
+        //
         $template_dir=APP_PATH.'/view/'.CONTROLLER;
         $compile_dir=APP_PATH.'/temp/'.CONTROLLER;
         $this->_smarty->template_dir=$template_dir;

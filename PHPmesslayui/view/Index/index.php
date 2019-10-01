@@ -28,8 +28,8 @@
                 <p class="replyc"><span>{date('Y-m-d h:i',$val['reply_time'])} 回复：</span>{nl2br($val.reply_content)}</p>
                 {/if}
                 <p>
-                    <a href="javascript:;" class="reply" data-title="回复留言" data-url="{$config.siteurl}/?a=reply&id={$val['id']}">回复</a>
-                    <a href="javascript:;" class="reply edit" data-title="修改留言" data-url="{$config.siteurl}/?a=edit&id={$val['id']}">修改</a>
+                    <a href="javascript:;" class="reply" data-title="回复留言" data-url="{$config.siteurl}/index.php?a=reply&id={$val['id']}">回复</a>
+                    <a href="javascript:;" class="reply edit" data-title="修改留言" data-url="{$config.siteurl}/index.php?a=edit&id={$val['id']}">修改</a>
                     <a href="javascript:;" data-msg="确定删除该留言吗？" class="ajaxLink del" data-url="index.php?a=delete&id={$val.id}">删除</a>
                 </p>
             </div>
