@@ -1,17 +1,4 @@
 <?php
-
-// CREATE TABLE `www_message` (
-// `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-// `title` varchar(50) DEFAULT NULL COMMENT '标题',
-// `content` varchar(200) DEFAULT '' COMMENT '内容',
-// `reply_content` varchar(200) DEFAULT '' COMMENT '回复内容',
-// `create_time` char(12) DEFAULT NULL COMMENT '创建时间',
-// `reply_time` char(12) DEFAULT NULL COMMENT '回复时间',
-// `uip` char(16) DEFAULT NULL COMMENT '用户IP',
-// `status` tinyint(1) DEFAULT '0' COMMENT '是否审核',
-// PRIMARY KEY (`id`)
-// ) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8;
-
 class IndexController extends Site {
 
     private $model;
@@ -37,7 +24,7 @@ class IndexController extends Site {
         //长度id
         $currentNum=($pageCurrent-1)*$page_size;
         //sql
-        $sql="select * from `".$this->DB."` ORDER BY id desc";
+        // 分页limit offset,size;  offset是开始的索引 size是长度含量的 limit offset size;limit (page-1)*size,size;        $sql="select * from `".$this->DB."` ORDER BY id desc";
         $query=$sql." limit $currentNum,$page_size";
         //mysqli_num_rows返回的是总的行数  里面的query是查询的结果
         $reccount=mysqli_num_rows($this->model->query($sql));

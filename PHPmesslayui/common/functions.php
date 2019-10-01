@@ -1,5 +1,5 @@
 <?php
-
+//乱七八糟没看
 function dump($var, $echo=true, $label=null, $strict=true) {
     $label = ($label === null) ? '' : rtrim($label) . ' ';
     if (!$strict) {
