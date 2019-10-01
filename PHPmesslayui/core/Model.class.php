@@ -1,10 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: phpteach.com
- * Date: 2019/06/20
- * Time: 17:42
- */
+
 class Model{
 
     private $conn;
