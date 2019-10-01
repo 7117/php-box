@@ -1,20 +1,5 @@
 <?php
-/**
- * 公共函数配置文件
- * Created by PhpStorm.
- * User: phpteach.com
- * Date: 2019/06/20
- * Time: 19:43
- */
 
-/**
- * 输出格式
- * @param $var
- * @param bool $echo
- * @param null $label
- * @param bool $strict
- * @return mixed|null|string
- */
 function dump($var, $echo=true, $label=null, $strict=true) {
     $label = ($label === null) ? '' : rtrim($label) . ' ';
     if (!$strict) {
