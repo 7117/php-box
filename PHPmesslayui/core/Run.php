@@ -7,16 +7,22 @@
  */
 final class Run{
     static public function start(){
-        self::init();//初始化设置
-        //self::createDefaultPage();//创建初始页面
-        self::loadCoreFiles();
-        self::appRun();
+        // self::createDefaultPage();//创建初始页面
+        //启动init方法
+        self::init();//初始化设置  设置参数
+        //启动
+        self::loadCoreFiles();  //加载类库
+        self::appRun();         //
     }
 
     //初始化设定
+    //这边其实好实在处理路由的参数
     static private function init(){
+        //获取home
         $m=isset($_GET['m'])?trim($_GET['m']):'Home';
+        //获取index 控制器
         $c=isset($_GET['c'])?trim($_GET['c']):'Index';
+        //获取动作！！！！
         $a=isset($_GET['a'])?trim($_GET['a']):'index';
         define('MODULE',$m);
         define('CONTROLLER',$c);
@@ -32,35 +38,16 @@ final class Run{
         define('VIEW_PATH',APP_PATH.'/view/'.$c);
     }
 
-    //创建初始页面
-    static private function createDefaultPage(){
-        if(is_dir(TEMP_PATH)) return;
-        if(!is_dir(TEMP_PATH)){
-            mkdir(TEMP_PATH,0777,true);
-        }
-        $data=<<<str
-<?php
-    class IndexController extends Controller{
-    
-        public function index(){
-            echo '<h1>项目创建成功，这是初始页面！</h1>';
-        }
-    }
-?>
-str;
-        if(!is_file(CONTROLLER_PATH)){
-            mkdir(CONTROLLER_PATH,0777,true);
-        }
-        file_put_contents(CONTROLLER_PATH.'/IndexController.class.php',$data);
-    }
-
     //加载系统所需文件
+    //加载文件 加载控制器文件 加载模型文件  加载方法文件
     static private function loadCoreFiles(){
         $files=array(
+            //加载控制器的文件  加载模型类库   加载方法类库
             CORE_PATH.'/Controller.class.php',
             CORE_PATH.'/Model.class.php',
             COMMON_PATH.'functions.php'
             );
+        //便利循环加载
         foreach ($files as $f){
             is_file($f) && include($f);
         }
@@ -68,12 +55,11 @@ str;
 
     //运行文件
     static private function appRun(){
-//        $included_files = get_included_files();
-//        foreach ($included_files as $filename) {
-//            echo "$filename\n";
-//        }
-        include COMMON_PATH.'config.php';//设置文件
-        include CORE_PATH.'/Site.class.php';//网站配置文件
+        //加载数据库的配置文件
+        include COMMON_PATH.'config.php';
+        //加载网站的配置信息
+        include CORE_PATH.'/Site.class.php';
+        //加载
         $appfile=CONTROLLER_PATH.'/'.CONTROLLER.'Controller.class.php';
         if(is_file($appfile)){
             require $appfile; //载入文件
@@ -92,4 +78,5 @@ str;
     }
 
 }
+//静态累不需要新建对象
 Run::start();

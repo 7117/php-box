@@ -1,21 +1,13 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: phpteach.com
- * Date: 2019/06/20
- * Time: 19:17
- */
-class Site extends Controller{
 
+class Site extends Controller{
+    //加载
     public function __construct(){
         parent::__construct();
         $this->assign('config',self::siteConfig());
     }
 
-    /**
-     * 网站配置
-     * @return array
-     */
+    //网站的配置信息
     static public function siteConfig(){
         $config=array(
             'sitename'=>'简单留言本',
