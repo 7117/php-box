@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: phpteach.com
- * Date: 2019/06/20
- * Time: 18:01
- */
 final class Run{
     static public function start(){
         // self::createDefaultPage();//创建初始页面
@@ -18,11 +12,11 @@ final class Run{
     //初始化设定
     //这边其实好实在处理路由的参数
     static private function init(){
-        //获取home
+        //获取模块的名字
         $m=isset($_GET['m'])?trim($_GET['m']):'Home';
-        //获取index 控制器
+        //获取控制器的
         $c=isset($_GET['c'])?trim($_GET['c']):'Index';
-        //获取动作！！！！
+        //获取控制器的方法的
         $a=isset($_GET['a'])?trim($_GET['a']):'index';
         define('MODULE',$m);
         define('CONTROLLER',$c);
@@ -53,13 +47,13 @@ final class Run{
         }
     }
 
-    //运行文件
+    //运行文件  根据参数进行运行文件
     static private function appRun(){
         //加载数据库的配置文件
         include COMMON_PATH.'config.php';
-        //加载网站的配置信息
+        //加载网站的配置信息 主要是参数和静态文件的加载
         include CORE_PATH.'/Site.class.php';
-        //加载控制类
+        //加载控制类  加载控制类  里面是smarty的方法 加载的类
         $appfile=CONTROLLER_PATH.'/'.CONTROLLER.'Controller.class.php';
         if(is_file($appfile)){
             require $appfile; //载入文件
