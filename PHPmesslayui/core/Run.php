@@ -6,6 +6,7 @@ final class Run{
         self::init();//初始化设置  设置参数
         //启动
         self::loadCoreFiles();  //加载类库
+        //根据参数进行运行文件
         self::appRun();         //
     }
 
