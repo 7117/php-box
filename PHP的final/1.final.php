@@ -18,7 +18,7 @@ class cc extends aa{
 }
 
 
-//class cc tt是用来测试类的继承的  
+//class cc tt是用来测试类的继承的
 final class cc{
     public function ff(){
         echo "aa";
