@@ -14,16 +14,23 @@ if(1){
 //     var_dump(aaaa);
 // }
 
+
 class  aaaa{
     const ddd="2222";
+    //这个是错误的！！！！
+    // define("rrrrr","ddddd");
+
 
     public function aaa(){
         // const aasssa="aaasssss";
         // var_dump(aasssa);
+        define("rrrrr","我是define的哈哈哈哈哈ddddd");
+        var_dump(rrrrr);
     }
 }
 //方法一：在类里面常量被视作静态属性
 $a=aaaa::ddd;
+// $a=aaaa::ddddddd;
 echo "<br>";
 var_dump($a);
 echo "<br>";
@@ -31,7 +38,8 @@ echo "<br>";
 $fff=new aaaa();
 const ddd="这个是自己定义的常量eeeee";
 @var_dump(ddd);
-
+echo "<br>";
+$fff->aaa();
 
 // $aaasssss=$fff->aaa();
 // var_dump($aaasssss);
