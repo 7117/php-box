@@ -1,33 +1,3 @@
-<?php
-
-header( 'Content-type:text/html;Charset=utf8' );
-if ( isset( $_COOKIE['username'] ) && isset( $_COOKIE['auth'] ) ) {
-//校验用户凭证
-    $auth = $_COOKIE['auth'];
-    $resArr = explode( ':', $auth );
-    $userId = end( $resArr );
-    $link = mysqli_connect( 'localhost', 'root', 'root' ) or die( 'Connect error' );
-    mysqli_set_charset( $link, 'utf8' );
-    mysqli_select_db( $link, 'php' ) or die( 'Database open error' );
-    $sql = 'SELECT user_id AS userId, name AS username, password FROM user WHERE user_id = ' . $userId;
-    $result = mysqli_query( $link, $sql );
-    if ( mysqli_num_rows( $result ) == 1 ) {
-        $row = mysqli_fetch_assoc( $result );
-        $username = $row['username'];
-        $password = $row['password'];
-        $salt = 'king';
-        $authStr = md5( $username.$password.$salt );
-        if ($authStr == $resArr[0]) {
-            exit( "
-        <script>
-        alert('你已经登录，即将跳转');
-        location.href='index.php';        
-        </script>
-        " );
-        }
-    }
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,24 +7,18 @@ if ( isset( $_COOKIE['username'] ) && isset( $_COOKIE['auth'] ) ) {
     <meta name="description" content="">
     <meta name="author" content="">
     <title>登录表单</title>
-
     <!-- Bootstrap core CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
     <style>
         body {
             padding-top: 50px;
         }
-
         .starter-template {
             padding: 40px 15px;
             text-align: center;
         }
     </style>
 
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
@@ -78,7 +42,7 @@ if ( isset( $_COOKIE['username'] ) && isset( $_COOKIE['auth'] ) ) {
                 <li><a href="#about">关于我们</a></li>
                 <li><a href="#contact">联系方式</a></li>
             </ul>
-        </div><!--/.nav-collapse -->
+        </div>
     </div>
 </div>
 
@@ -91,7 +55,7 @@ if ( isset( $_COOKIE['username'] ) && isset( $_COOKIE['auth'] ) ) {
                 <input type="text" class="form-control" name="username" id="username" placeholder="Enter username">
             </div>
         </div>
-
+f
         <div class="form-group">
             <label for="password" class="col-sm-2 control-label">密码</label>
             <div class="col-sm-10">
@@ -111,7 +75,7 @@ if ( isset( $_COOKIE['username'] ) && isset( $_COOKIE['auth'] ) ) {
 
         <button type="submit" class="btn btn-primary">提交</button>
     </form>
-</div><!-- /.container -->
+</div>
 
 <!-- Bootstrap core JavaScript
 ================================================== -->
