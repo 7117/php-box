@@ -1,3 +1,4 @@
 <?php
 
-setcookie("aa","aa",time()+3600,"/");
+setcookie("aa","aaa",time()+3600,"/");
+
