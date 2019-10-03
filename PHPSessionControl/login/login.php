@@ -7,7 +7,6 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <title>登录表单</title>
-    <!-- Bootstrap core CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
@@ -18,10 +17,8 @@
             text-align: center;
         }
     </style>
-
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
 </head>
 
 <body>
@@ -29,7 +26,7 @@
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
+                <span class="sr-only"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
@@ -55,7 +52,7 @@
                 <input type="text" class="form-control" name="username" id="username" placeholder="Enter username">
             </div>
         </div>
-f
+        <p></p>
         <div class="form-group">
             <label for="password" class="col-sm-2 control-label">密码</label>
             <div class="col-sm-10">
@@ -73,7 +70,7 @@ f
             </div>
         </div>
 
-        <button type="submit" class="btn btn-primary">提交</button>
+        <button type="submit" class="btn btn-primary" style="margin-left:490px;width:200px;height:200px;color:black">提交</button>
     </form>
 </div>
 

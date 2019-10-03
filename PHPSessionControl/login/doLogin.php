@@ -1,4 +1,5 @@
 <?php
+//在登录的表单进行登录的验证并且进行保存cookie
 include "conn.php";
 $username=$_POST['username'];
 $password=$_POST['password'];
@@ -8,6 +9,7 @@ $sql="select id,username,password from cookie where username='{$username}'";
 
 $result=mysqli_query($link,$sql);
 if(!empty(mysqli_num_rows($result))){
+    //存在的话  进行跳转
     if($autologin){
         $row=mysqli_fetch_all($result,MYSQLI_ASSOC);
         setcookie('username',$username,time()+7*24*3600);

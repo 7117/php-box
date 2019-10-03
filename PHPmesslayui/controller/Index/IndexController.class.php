@@ -9,6 +9,7 @@ class IndexController extends Site {
     public function __construct(){
         parent::__construct();
         //指定模型
+        //直接新的类
         $this->model=new Model();
         //指定数据库
         $this->DB='www_message';
@@ -17,6 +18,12 @@ class IndexController extends Site {
     /**
      * 首页列表
      */
+    //顺序是什么？
+    //第一步：mysqli_connect
+    //第二步：mysqli_set_charset
+    //第三步：mysqli_query($sql)
+    //第四步：mysqli_num_rows()
+    //第五步：mysqli_fetch_all()
     public function index(){
         //页面长度
         $page_size=3;
