@@ -1,8 +1,10 @@
 <?php
+$dir=__DIR__."\\";
+$open=fopen("$dir".'ddd.php',"w");
+$str="bbb\r\n";
 
-$a=fopen("ddd.php","w");
-$aaa="aaa";
-fwrite($a,$aaa);
-fwrite($a,$aaa);
-fwrite($a,$aaa);
-fclose($a);
+fwrite($open,$str);
+fwrite($open,$str);
+fwrite($open,$str);
+
+fclose($open);

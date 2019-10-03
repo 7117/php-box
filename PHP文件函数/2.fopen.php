@@ -9,7 +9,7 @@
 //w+读写 文件不存在会进行创建文件
 //a+读写 文件从尾部开始  文件不存在会进行创建文件
 //x+读写 创建文件
-$a=fopen('D:\phpstudy\PHPTutorial\WWW\CodePractice\PHP\PHP文件函数\d.php',"r+");
+$a=fopen('D:\phpstudy\PHPTutorial\WWW\PHPCollection\PHP文件函数\d.php',"r");
 
 //fopen的
 //第一个参数是fopen的对象

@@ -1,9 +1,9 @@
 <?php
-$a=fopen("D:\phpstudy\PHPTutorial\WWW\CodePractice\PHP\PHP文件函数\ddd.php","r+");
+$b=fopen("D:\phpstudy\PHPTutorial\WWW\PHPCollection\PHP文件函数\ccc.php","r+");
 
-while(!feof($a)){
-    echo fgetc($a);
+while(!feof($b)){
+    echo fgetc($b);
     echo "<br>";
 }
 
-fclose($a);
+fclose($b);
