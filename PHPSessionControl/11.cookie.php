@@ -67,7 +67,7 @@ class Cookie{
             }
         }
     }
-
+    
     public function setOptions($options=[]){
         if(isset($options['expire'])){
             $this->expire=(int)$options['expire'];
