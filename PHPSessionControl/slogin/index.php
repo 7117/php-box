@@ -1,3 +1,7 @@
+<?php
+session_start();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,7 +23,8 @@
 <body>
 <nav class="navbar navbar-inverse">
     <ul class="nav navbar-nav">
-        <li><a href="#">欢迎您,<?php echo $_COOKIE['username'] ?></a>!</li>
+        <li><a href="#">欢迎您,<?php echo $_SESSION['username']; ?></a>!</li>
+        <h3><a href="usercenter.php">个人中心</a></h3>
     </ul>
 </nav>
 </body>

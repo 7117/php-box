@@ -45,7 +45,7 @@
 
 <div class="container">
     <h1 class="text-center">登录页面</h1>
-    <form action="doLogin.php" method="post" role="form">
+    <form action="doLogin.php?act=login" method="post" role="form">
         <div class="form-group">
             <label for="username" class="col-sm-2">用户名</label>
             <div class="col-sm-10">
@@ -59,17 +59,13 @@
                 <input type="text" class="form-control" name="password" id="password" placeholder="Enter password">
             </div>
         </div>
-
         <div class="form-group">
-            <div class="col-sm-offset-2 col-sm-10">
-                <div class="checkbox">
-                    <label>
-                        <input type="checkbox" name="autoLogin" value="1">一周内自动登录
-                    </label>
-                </div>
+            <label for="verify" class="col-sm-2 control-label">验证码</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" name="verify" id="verify" placeholder="code input">
+                <img src="./code.php">
             </div>
         </div>
-
         <button type="submit" class="btn btn-primary" style="margin-left:490px;width:200px;height:200px;color:black">提交</button>
     </form>
 </div>
