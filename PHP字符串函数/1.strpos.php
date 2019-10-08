@@ -1,14 +1,22 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: sunxi
- * Date: 2019/9/23
- * Time: 16:27
- */
 
-//strpos
-$num=strpos('aaav','v');
-//输出3
+$num=strpos('aaavV','V');
 var_dump($num);
+echo "<br>";
 
+$num=stripos("aaavV",'V');
+var_dump($num);
+echo "<br>";
 
+$num=strrpos('aaavV',"v");
+var_dump($num);
+echo "<br>";
+
+$num=strripos('aaavV',"v");
+var_dump($num);
+echo "<br>";
+
+// int(4)
+// int(3)
+// int(3)
+// int(4)
