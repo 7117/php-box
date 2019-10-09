@@ -6,6 +6,12 @@ $password=$_POST['password'];
 $autologin=$_POST['autoLogin']?$_POST['autoLogin']:1;
 
 $sql="select id,username,password from cookie where username='{$username}'";
+//1.获取参数
+//2.拼接sql
+//3.mysqli_query(link,sql)
+//4.mysqli_num_rows(res)
+//5.mysqli_fetch_all
+//6.mysqli_close()
 
 $result=mysqli_query($link,$sql);
 if(!empty(mysqli_num_rows($result))){
