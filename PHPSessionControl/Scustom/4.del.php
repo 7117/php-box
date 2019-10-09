@@ -7,8 +7,8 @@ $custom=new CustomSession();
 session_set_save_handler($custom,true);
 
 session_start();
-print_r($_SESSION);
 
+session_destroy();
 
 
 
