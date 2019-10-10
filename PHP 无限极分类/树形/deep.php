@@ -6,8 +6,9 @@ function getList($pid=0,&$result=[],$spac=0){
     $spac=$spac+2;
     $sql="select * from sort where pid=$pid";
     $res=mysqli_query($conn,$sql);
+    //每次去除一条，直至取完
     while($row=mysqli_fetch_assoc($res)){
-        $row['catename']=str_repeat('&nbsp;',$spac).'|---'.$row['catename'];
+        $row['catename']=str_repeat('&nbsp;&nbsp;',$spac).$row['catename'];
         $result[]=$row;
         getList($row['id'],$result,$spac);
     }
