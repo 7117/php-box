@@ -1,16 +1,21 @@
 <?php
-// Notice: Undefined variable: a in D:\phpstudy\PHPTutorial\WWW\PHPCollection\PHP变量\8.unset static.php on line 6
-// NULL
-
+// ( ! ) Notice: Undefined variable: a in D:\phpstudy\P
+// HPTutorial\WWW\PHPCollection\PHP变量\8.unset static.php on line 9
 function aa(){
     static $a=1;
+    print_r($a);
     unset($a);
-    echo "$a";
+    print_r($a);
 }
+
+static $b=1;
+var_dump($b);
+unset($b);
+var_dump($b);
 
 aa();
 echo "<br>";
-
+die();
 // Notice: Undefined variable: b in D:\phps\8.unset static.php on line 18
 // Notice: Undefined variable: b in D:\phps\8.unset static.php on line 18
 // Notice: Undefined variable: b in D:\phps\8.unset static.php on line 18
