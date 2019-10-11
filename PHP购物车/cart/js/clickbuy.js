@@ -1,4 +1,4 @@
-//ajax请求php脚本完成数据的添加 shop_cart
+//添加购物车的操作
 function addCart(productid){
     alert("点击购物车");
     var url = "addCart.php";

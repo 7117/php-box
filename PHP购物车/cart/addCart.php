@@ -22,28 +22,52 @@ try{
 
     $price=$data['price'];
     $create=time();
-    $sql="insert into shop_cart (id,productid,userid,num,price,createtime) 
-          values(?,?,?,?,?,?)";
+
+    $sql="select * from shop_cart where productid=?";
     $stmt=$pdo->prepare($sql);
-    $stmt->execute([null,$productid,$userid,$num,$price,$create]);
+    $stmt->execute([$productid]);
+    $data=$stmt->fetch(PDO::FETCH_ASSOC);
+    $originnum=$data['num'];
+
     $rows=$stmt->rowCount();
+    //如果之前有的话
+    if($rows){
+        $sql="update shop_cart set num=? where productid=?";
+        $stmt=$pdo->prepare($sql);
+        $nownum=$originnum+$num;
+        $stmt->execute([$nownum,$productid]);
+        $rows=$stmt->rowCount();
+        res($rows,[]);
+    }else{
+    //如果之前没有的话
+        $sql="insert into shop_cart (id,productid,userid,num,price,createtime) 
+          values(?,?,?,?,?,?)";
+        $stmt=$pdo->prepare($sql);
+        $stmt->execute([null,$productid,$userid,$num,$price,$create]);
+        $rows=$stmt->rowCount();
+        res($rows,$data);
+    }
 }catch(PDOException $e){
     echo $e->getMessage();
 }
 
-if($rows){
-    $response=[
+function res($rows,$data){
+    if($rows){
+        $response=[
             "code"=>1,
             "mes"=>"success",
             "price"=>$data
-    ];
-    echo json_encode($response);
-}else{
-    $response=[
-        "code"=>0,
-        "mes"=>"fail"
-    ];
-    echo json_encode($response);
+        ];
+        echo json_encode($response);
+        die();
+    }else{
+        $response=[
+            "code"=>0,
+            "mes"=>"fail"
+        ];
+        echo json_encode($response);
+        die();
+    }
 }
 
 
