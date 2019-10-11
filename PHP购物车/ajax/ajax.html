@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+<button id="btn">按钮</button>
+<div id="box"></div>
+</body>
+<script type="text/javascript">
+    $("#btn").click(function(){
+        $.ajax({
+            url:"ajax.php",
+            type:'post',
+            data:{"data":"xxx","cc":"dd"},
+            success:function (data) {
+                $("#box").html(data);
+            },
+            error:function (data) {
+                $("$box").html(data)
+            }
+        });
+    })
+</script>
+</html>
