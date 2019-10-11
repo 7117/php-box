@@ -1,6 +1,6 @@
 <?php
 
-$reg="/\bid\b/";
-$str="dwdwdwidddwq";
-$aa=preg_match($reg,"11",$str);
+$str='what is this?';
+$reg="/\bis\b/";
+$aa=preg_match($reg,"was",$str);
 var_dump($aa);
