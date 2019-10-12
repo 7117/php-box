@@ -5,37 +5,38 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:wb="“http://open.weibo.com/wb”"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="Generator" content="imooc">
 
-<meta http-equiv="X-UA-Compatible" content="IE=8">
-<meta name="Keywords" content="慕课商城">
-<meta name="Description" content="">
-<title>慕课商城</title>
-<link rel="shortcut icon" href="http://localhost/upload/favicon.ico">
-<link rel="icon" href="http://localhost/upload/animated_favicon.gif" type="image/gif">
-<link href="./resource/style.css" rel="stylesheet" type="text/css">
-<script type="text/javascript" src="./resource/common.js"></script><script type="text/javascript" src="./resource/action.js"></script>
-<script type="text/javascript" src="./resource/mzp-packed-me.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=8">
+    <meta name="Keywords" content="商城">
+    <meta name="Description" content="">
+    <link rel="shortcut icon" href="http://localhost/upload/favicon.ico">
+    <link rel="icon" href="http://localhost/upload/animated_favicon.gif" type="image/gif">
+    <link href="./resource/style.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="./resource/common.js"></script><script type="text/javascript" src="./resource/action.js"></script>
+    <script type="text/javascript" src="./resource/mzp-packed-me.js"></script>
+<script src="./js/clickbuy.js"></script>
 <script type="text/javascript">
 function $id(element) {
-  return document.getElementById(element);
+return document.getElementById(element);
 }
 //切屏--是按钮，_v是内容平台，_h是内容库
 function reg(str){
-  var bt=$id(str+"_b").getElementsByTagName("h2");
-  for(var i=0;i<bt.length;i++){
-    bt[i].subj=str;
-    bt[i].pai=i;
-    bt[i].style.cursor="pointer";
-    bt[i].onclick=function(){
-      $id(this.subj+"_v").innerHTML=$id(this.subj+"_h").getElementsByTagName("blockquote")[this.pai].innerHTML;
-      for(var j=0;j<$id(this.subj+"_b").getElementsByTagName("h2").length;j++){
-        var _bt=$id(this.subj+"_b").getElementsByTagName("h2")[j];
-        var ison=j==this.pai;
-        _bt.className=(ison?"":"h2bg");
-      }
-    }
+var bt=$id(str+"_b").getElementsByTagName("h2");
+for(var i=0;i<bt.length;i++){
+bt[i].subj=str;
+bt[i].pai=i;
+bt[i].style.cursor="pointer";
+bt[i].onclick=function(){
+  $id(this.subj+"_v").innerHTML=$id(this.subj+"_h").getElementsByTagName("blockquote")[this.pai].innerHTML;
+  for(var j=0;j<$id(this.subj+"_b").getElementsByTagName("h2").length;j++){
+    var _bt=$id(this.subj+"_b").getElementsByTagName("h2")[j];
+    var ison=j==this.pai;
+    _bt.className=(ison?"":"h2bg");
   }
-  $id(str+"_h").className="none";
-  $id(str+"_v").innerHTML=$id(str+"_h").getElementsByTagName("blockquote")[0].innerHTML;
+}
+}
+$id(str+"_h").className="none";
+$id(str+"_v").innerHTML=$id(str+"_h").getElementsByTagName("blockquote")[0].innerHTML;
 }
 </script>
 </head>
@@ -265,7 +266,7 @@ document.getElementById('history_list').innerHTML = '您已清空最近浏览过
 
 <?php
 	try{
-		$pdo = new PDO("mysql:host=localhost;dbname=imooc","root","root123",array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION));
+		$pdo = new PDO("mysql:host=localhost;dbname=test1","root","root",array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION));
 		$pdo->query("set names utf8");
 		$sql = "select * from shop_product where id=?";
 		$stmt = $pdo->prepare($sql);
@@ -370,11 +371,25 @@ document.getElementById('history_list').innerHTML = '您已清空最近浏览过
             </li>
 
             <li class="padd">
-                <a href="javascript:addCart(<?php echo 12 ?>);">
+                <a href="javascript:addCart(12);">
                     <img src="./resource/goumai2.gif">
                 </a>
             </li>
-      <script type="text/javascript" src="./js/clickbuy.js"></script>
+             <script type="text/javascript">
+                 function addCart(productid) {
+                     alert("点击购物车");
+                     var url = "addCart.php";
+                     var data = {"productid": productid, "num": parseInt($("#number").val())};
+                     var success = function (response) {
+                         if (response.code == 1) {
+                             alert('加入购物车成功');
+                         } else {
+                             alert('加入购物车失败');
+                         }
+                     };
+                     $.post(url, data, success, "json");
+                 }
+             </script>
 
       </ul>
       </form>

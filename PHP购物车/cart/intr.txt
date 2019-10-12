@@ -1,2 +1,6 @@
+product.php是商品页面，可以点击加入购物车
+addCart.php是进行添加购物车的处理逻辑
+
+
 cart.php是购物车的页面
 对应的changeNum.js（请求changeNum.php进行修改购物车的数据）进行修改购物车数据
