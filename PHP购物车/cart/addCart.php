@@ -12,6 +12,12 @@ session_start();
 $userid = 1;
 
 try {
+    //1.链接pdo
+    //2.使用query设置字符集
+    //3.写出sql语句
+    //4.预处理prepare
+    //5.执行execute
+    //6.取回fetch
     $pdo = new PDO("mysql:host=localhost;dbname=test1", "root", "root",
         array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
     $pdo->query("set names utf8");

@@ -7,6 +7,28 @@
 <link href="./resource/style.css" rel="stylesheet" type="text/css">
 <script type="text/javascript" src="./js/addCart.js"></script>
 
+
+<div>
+    <ul class="bnt_ul">
+        <li class="clearfix">
+            <dd>
+                <strong>购买数量：</strong>
+                <input name="number" type="text" id="number" value="1" size="4" onblur="" style="border:1px solid #ccc; ">
+                <strong>商品总价：</strong>
+            </dd>
+        </li>
+
+        <li class="padd">
+            <a href="javascript:addCart(12);">
+                <img src="./resource/goumai2.gif">
+            </a>
+        </li>
+    </ul>
+</div>
+</html>
+
+
+<!--获取商品的详细信息-->
 <?php
 try {
     session_start();
@@ -20,28 +42,3 @@ try {
     echo $e->getMessage();
 }
 ?>
-
-
-<ul class="bnt_ul">
-    <li class="padd loop">
-        <strong>颜色：</strong>
-        <input type="radio" name="spec_185" value="231" id="spec_value_231" checked="" onclick="changePrice()">
-        <label>白色 [ ￥0.00元] </label>
-        <input type="hidden" name="spec_list" value="0">
-    </li>
-    <li class="clearfix">
-        <dd>
-            <strong>购买数量：</strong>
-            <input name="number" type="text" id="number" value="1" size="4" onblur="" style="border:1px solid #ccc; ">
-            <strong>商品总价：</strong>
-            <font id="" class="f1">￥ 111.11元</font>
-        </dd>
-    </li>
-
-    <li class="padd">
-        <a href="javascript:addCart(12);">
-            <img src="./resource/goumai2.gif">
-        </a>
-    </li>
-</ul>
-</html>

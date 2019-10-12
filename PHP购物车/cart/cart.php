@@ -10,12 +10,12 @@
     <script type="text/javascript" src="./resource/common.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="./resource/shopping_flow.js"></script>
+    <script type="text/javascript" src="./js/delPro.js"></script>
 </head>
 <body>
 
 <div class="block table">
     <div class="flowBox">
-        <h6><span>商品列表</span></h6>
         <form id="formCart" name="formCart" method="post" action="http://localhost/upload/flow.php">
             <table width="99%" align="center" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
                 <tbody>
@@ -49,7 +49,7 @@ try{
 ?>
 
 <?php foreach ($res as $k=>$v):?>
-    <tr class="products">
+    <tr class="products" id="<?php echo 'tr'.$v['productid']?>">
         <td align="center" bgcolor="#ffffff"><img src="<?php echo $v['title'];?>"></td>
         <td align="center" bgcolor="#ffffff"><span id="<?php echo $v['productid']?>"><?php echo $v['price'];?></span></td>
         <td align="center" bgcolor="#ffffff"><span id="11"><?php echo $v['num'];?></span></td>
@@ -59,26 +59,11 @@ try{
         </td>
         <td align="center" bgcolor="#ffffff"><span id="total"><?php echo $v['num']*$v['price'];?></span></td>
         <td align="center" bgcolor="#ffffff">
-            <a href="javascript:delPro(111);" class="f6">删除</a>
+            <a href="javascript:delPro(<?php echo $v['productid'];?>);" class="f6">删除</a>
         </td>
     </tr>
 <?php endforeach;?>
 
-
-<!--此处js的代码-->
-<script type="text/javascript">
-    function delPro(productid){
-        //通过ajax将商品的id传递给PHP脚本进行数据表的删除
-        var url = "deleteProduct.php";
-        var data = {"productid":productid};
-        var success = function(response){
-            if(response.errno == 0){
-                $("#tr-"+productid).remove();
-            }
-        }
-        $.get(url, data, success, "json");
-    }
-</script>
 </tbody>
 </table>
 </form>
