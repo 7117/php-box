@@ -1,0 +1,2 @@
+cart.php是购物车的页面
+对应的changeNum.js（请求changeNum.php进行修改购物车的数据）进行修改购物车数据

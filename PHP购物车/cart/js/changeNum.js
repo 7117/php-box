@@ -1,19 +1,14 @@
-//离开input框的时候进行修改
-function changeNum(productid, num){
-    alert(productid);
-    alert(num);
-    //通过ajax将对应商品的数量进行修改操作
-    var url = "changeNum.php";
-    var data = {'productid':productid, 'num':num};
-    var success = function(response){
-        if(response.errno == 0){
-            var price = ($("#product-"+productid).val())*($("#p-"+productid).html());
-            $("#total-"+productid).html(price);
+function changeNum(productid, num) {
+    $.ajax({
+        url: "changeNum.php",
+        data: {'productid': productid, 'num': num},
+        type: 'post',
+        success: function (response) {
+            var price = (parseInt($("#" + productid).html())) * num;
+            $("#total").html(price);
+        },
+        error: function (data) {
+            alert("fail");
         }
-    }
-    $.post(
-        url,
-        data,
-        success,
-        "json");
+    });
 }
