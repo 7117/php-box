@@ -3,7 +3,7 @@
     <meta name="Generator" content="商城">
     <meta name="Keywords" content="">
     <meta name="Description" content="">
-    <title>商城</title>
+    <title>购物车页面</title>
     <link rel="shortcut icon" href="http://localhost/upload/favicon.ico">
     <link rel="icon" href="http://localhost/upload/animated_favicon.gif" type="image/gif">
     <link href="./resource/style.css" rel="stylesheet" type="text/css">

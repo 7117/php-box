@@ -1,5 +1,4 @@
-//添加购物车的操作
-function addCart() {
+function addCart(productid) {
     alert("点击购物车");
     var url = "addCart.php";
     var data = {"productid": productid, "num": parseInt($("#number").val())};
