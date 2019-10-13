@@ -18,6 +18,24 @@ class db extends conn {
         return $res;
     }
 
+    public function getAllGrades(){
+        $sql="select distinct grade from excel  order by grade asc";
+        $res=$this->getResult($sql);
+        return $res;
+    }
+
+    public function getClassByGrade($grade){
+        $sql="select distinct class from excel where grade=$grade order by score desc";
+        $res=$this->getResult($sql);
+        return $res;
+    }
+
+    public function getStudentByClass($class,$grade){
+        $sql="select * from excel where class={$class} and grade={$grade}";
+        $res=$this->getResult($sql);
+        return $res;
+    }
+
 }
 
 $db=new db();
