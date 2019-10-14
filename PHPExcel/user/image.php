@@ -9,7 +9,9 @@ $excel=new PHPExcel();
 $grade=$db->getAllGrades();
 $sheet=$excel->getActiveSheet();
 
-//插入图片
+/**
+ * 插入图片
+ */
 $img=new PHPExcel_Worksheet_Drawing();
 $img->setPath(dirname($dir)."/aa.png");
 $img->setWorksheet($sheet);
@@ -17,10 +19,24 @@ $img->setWorksheet($sheet);
 $img->setCoordinates("A6");
 //设置宽度
 $img->setWidth(1000);
-$img->setOffsetX(20);
+$img->setOffsetX(5);
 $img->setOffsetY(5);
 
+/**
+ * 插入文字块
+ */
+$text=new PHPExcel_RichText();
+$text->createText("文文文文文文");
+//可以添加样式的蚊子块
+$font=$text->createTextRun("的的的的的的的");
+//添加样式
+$font->getFont()
+    ->setSize(16)
+    ->setBold(True)
+    ->setColor(new PHPExcel_Style_Color(PHPExcel_Style_color::COLOR_GREEN));
 
+$text->createText("荣荣荣荣荣荣荣荣荣荣");
+$sheet->getCell("E22")->setValue($text);
 
 //设置居中
 $sheet->getDefaultStyle()->getAlignment()
@@ -32,12 +48,12 @@ $sheet->getStyle("A2:Z2")->getFont()->setName('微软雅黑')->setSize(15)->setB
 //现在获取的是一个年级的一个班级的学生的所有的数据
 $index=0;
 foreach ($grade as $k=>$v){
-    $gradeindex=getCell($index*2);
+    $gradeindex=getCellContent($index*2);
     $sheet->setCellValue($gradeindex."2","高".$v['grade']);
     $class=$db->getClassByGrade($v['grade']);
     foreach($class as $c_k=>$c_v){
-        $nameindex=getCell($index*2);
-        $scoreindex=getCell($index*2+1);
+        $nameindex=getCellContent($index*2);
+        $scoreindex=getCellContent($index*2+1);
         //填充设置标题
         $sheet->setCellValue($nameindex."3",$c_v['class'].'班');
         //设置填充颜色
@@ -70,7 +86,7 @@ foreach ($grade as $k=>$v){
         }
         $index++;
     }
-    $endindex=getCell($index*2-1);
+    $endindex=getCellContent($index*2-1);
     //合并
     $sheet->mergeCells($gradeindex."2:".$endindex."2");
     //设置填充颜色
@@ -97,7 +113,7 @@ function exportBroswer($type,$name){
 }
 
 //获取字符
-function getCell($index){
+function getCellContent($index){
     $arr=range('A','Z');
     return $arr[$index];
 }
