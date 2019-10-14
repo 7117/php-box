@@ -1,0 +1,8 @@
+conn.php数据库连接配置  进行连接数据库
+dbfunc.php进行数据库sql查询操作的
+demo.php基本的excel操作  进行入门
+export.php基本的execl操作 进行输出值浏览器
+style.php进行处理收集数据，然后进行给excel文件设置样式：居中 边框 背景填充  加粗 科学计数法设置 换行  字体大小设置
+image.php进行图片的插入  添加文字块  添加批注  添加超链接
+chart.php生成统计表
+read.php进行读取excel文件 全部一次性读取 分段文件读取  指定sheet读取
