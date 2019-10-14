@@ -5,6 +5,7 @@ include "../Classes/PHPExcel.php";
 $dir=dirname(__FILE__);
 $excel=new PHPExcel();
 $sheet=$excel->getActiveSheet();
+$sheet->mergeCells("B10:H10");
 
 /**
  * 插入文字块
@@ -20,8 +21,13 @@ $font->getFont()
     ->setColor(new PHPExcel_Style_Color(PHPExcel_Style_color::COLOR_GREEN));
 
 $text->createText("荣荣荣荣荣荣荣荣荣荣");
-$sheet->getCell("C10")->setValue($text);
+$sheet->getCell("B10")->setValue($text);
 
+
+/**
+ * 添加批注
+ */
+$sheet->getComment("B10")->getText()->createTextRun("VAN\r\nVAN\r\n");
 
 /**
  * 插入图片
@@ -101,9 +107,9 @@ foreach ($grade as $k=>$v){
     $sheet->getStyle($gradeindex."2:".$endindex."2")->applyFromArray($gradeborder);
 }
 
-$write=PHPExcel_IOFactory::createWriter($excel,'Excel5');
+$write=PHPExcel_IOFactory::createWriter($excel,'Excel2007');
 // $write->save($dir."./../export.xlsx");//输出文件
-exportBroswer('Excel5','broswerExcel.xls');//输出到浏览器
+exportBroswer('Excel2007','broswerExcel.xlsx');//输出到浏览器
 $write->save("php://output");
 
 //进行输出到浏览器
