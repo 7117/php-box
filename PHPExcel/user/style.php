@@ -35,8 +35,11 @@ foreach ($grade as $k=>$v){
         $sheet->mergeCells($nameindex."3:".$scoreindex."3");
         $info=$db->getStudentByClass($c_v['class'],$v['grade']);
         $sheet->setCellValue($nameindex."3",$c_v['class'].'班');
-        $sheet->setCellValue($nameindex."4","姓名")
-            ->setCellValue($scoreindex."4","成绩");
+        //换行设置
+        $sheet->getStyle($nameindex)->getAlignment()->setWrapText(true);
+        $sheet->getStyle($scoreindex)->getAlignment()->setWrapText(true);
+        $sheet->setCellValue($nameindex."4","姓名\n")
+            ->setCellValue($scoreindex."4","成绩\n");
         $j=5;
         foreach($info as $k=>$v){
             $sheet->setCellValue($nameindex.$j,$v['username'])
@@ -52,11 +55,10 @@ foreach ($grade as $k=>$v){
     //设置填充颜色
     $sheet->getStyle($gradeindex."2")->getFill()
         ->setFillType(PHPEXCEL_Style_Fill::FILL_SOLID)->getStartColor()->setARGB('ffff66');
-    // 设置边框
+    //设置边框
     $gradeborder=getBorder('e3df51');
     $sheet->getStyle($gradeindex."2:".$endindex."2")->applyFromArray($gradeborder);
 }
-
 
 $write=PHPExcel_IOFactory::createWriter($excel,'Excel5');
 // $write->save($dir."./../export.xlsx");//输出文件
