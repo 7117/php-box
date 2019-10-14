@@ -4,23 +4,7 @@ include "../Classes/PHPExcel.php";
 
 $dir=dirname(__FILE__);
 $excel=new PHPExcel();
-
-//年级
-$grade=$db->getAllGrades();
 $sheet=$excel->getActiveSheet();
-
-/**
- * 插入图片
- */
-$img=new PHPExcel_Worksheet_Drawing();
-$img->setPath(dirname($dir)."/aa.png");
-$img->setWorksheet($sheet);
-//左上角起点
-$img->setCoordinates("A6");
-//设置宽度
-$img->setWidth(1000);
-$img->setOffsetX(5);
-$img->setOffsetY(5);
 
 /**
  * 插入文字块
@@ -36,8 +20,28 @@ $font->getFont()
     ->setColor(new PHPExcel_Style_Color(PHPExcel_Style_color::COLOR_GREEN));
 
 $text->createText("荣荣荣荣荣荣荣荣荣荣");
-$sheet->getCell("E22")->setValue($text);
+$sheet->getCell("C10")->setValue($text);
 
+
+/**
+ * 插入图片
+ */
+$img=new PHPExcel_Worksheet_Drawing();
+$img->setPath(dirname($dir)."/aa.png");
+$img->setWorksheet($sheet);
+//左上角起点
+$img->setCoordinates("A12");
+//设置宽度
+$img->setWidth(500);
+$img->setOffsetX(5);
+$img->setOffsetY(5);
+
+
+/**
+ * 表格的数据的处理
+ */
+//年级
+$grade=$db->getAllGrades();
 //设置居中
 $sheet->getDefaultStyle()->getAlignment()
     ->setVertical(PHPExcel_Style_Alignment::VERTICAL_CENTER)
@@ -102,6 +106,7 @@ $write=PHPExcel_IOFactory::createWriter($excel,'Excel5');
 exportBroswer('Excel5','broswerExcel.xls');//输出到浏览器
 $write->save("php://output");
 
+//进行输出到浏览器
 function exportBroswer($type,$name){
     if($type=="Excel5"){
         header('Content-Type: application/vnd.ms-excel');
@@ -117,7 +122,6 @@ function getCellContent($index){
     $arr=range('A','Z');
     return $arr[$index];
 }
-
 //获取边框 方式在4.6.18
 function getBorder($color){
     $style=[
@@ -130,5 +134,3 @@ function getBorder($color){
     ];
     return $style;
 }
-
-
