@@ -23,23 +23,23 @@ foreach ($grade as $k=>$v){
     foreach($class as $c_k=>$c_v){
         $nameindex=getCell($index*2);
         $scoreindex=getCell($index*2+1);
-
+        //填充设置标题
+        $sheet->setCellValue($nameindex."3",$c_v['class'].'班');
         //设置填充颜色
         $sheet->getStyle($nameindex."3")->getFill()
-            ->setFillType(PHPEXCEL_Style_Fill::FILL_SOLID)->getStartColor()->setARGB('FFFF0000');
+              ->setFillType(PHPEXCEL_Style_Fill::FILL_SOLID)->getStartColor()->setARGB('FFFF0000');
         //设置边框
         $classborder=getBorder('00ff33');
         $sheet->getStyle($nameindex."3:".$scoreindex."3")->applyFromArray($classborder);
-
-
+        //合并单元格
         $sheet->mergeCells($nameindex."3:".$scoreindex."3");
-        $info=$db->getStudentByClass($c_v['class'],$v['grade']);
-        $sheet->setCellValue($nameindex."3",$c_v['class'].'班');
         //换行设置
         $sheet->getStyle($nameindex)->getAlignment()->setWrapText(true);
         $sheet->getStyle($scoreindex)->getAlignment()->setWrapText(true);
         $sheet->setCellValue($nameindex."4","姓名\n")
             ->setCellValue($scoreindex."4","成绩\n");
+        //填充数据
+        $info=$db->getStudentByClass($c_v['class'],$v['grade']);
         $j=5;
         foreach($info as $k=>$v){
             $sheet->setCellValue($nameindex.$j,$v['username'])
