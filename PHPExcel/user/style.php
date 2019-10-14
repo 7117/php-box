@@ -27,7 +27,7 @@ foreach ($grade as $k=>$v){
         $sheet->setCellValue($nameindex."3",$c_v['class'].'班');
         //设置填充颜色
         $sheet->getStyle($nameindex."3")->getFill()
-              ->setFillType(PHPEXCEL_Style_Fill::FILL_SOLID)->getStartColor()->setARGB('FFFF0000');
+            ->setFillType(PHPEXCEL_Style_Fill::FILL_SOLID)->getStartColor()->setARGB('FFFF0000');
         //设置边框
         $classborder=getBorder('00ff33');
         $sheet->getStyle($nameindex."3:".$scoreindex."3")->applyFromArray($classborder);
@@ -42,8 +42,14 @@ foreach ($grade as $k=>$v){
         $info=$db->getStudentByClass($c_v['class'],$v['grade']);
         $j=5;
         foreach($info as $k=>$v){
-            $sheet->setCellValue($nameindex.$j,$v['username'])
-                ->setCellValue($scoreindex.$j,$v['score']);
+            if($scoreindex.$j=='B5'){
+                //设置不按照科学计数法进行计数  全部进行显示
+                $sheet->setCellValue($nameindex.$j,$v['username'])
+                    ->setCellValueExplicit($scoreindex.$j,"111111111111111",PHPExcel_Cell_DataType::TYPE_STRING);
+            }else{
+                $sheet->setCellValue($nameindex.$j,$v['username'])
+                    ->setCellValue($scoreindex.$j,$v['score']);
+            }
             //行数
             $j++;
         }
