@@ -42,7 +42,13 @@ $img->setWidth(500);
 $img->setOffsetX(5);
 $img->setOffsetY(5);
 
-
+/**
+ * 超链接
+ */
+$sheet->getCell("B10")->getHyperlink()->setUrl("http://www.baidu.com/");
+$sheet->getStyle("B10:H10")->getFont()
+    ->setSize(16)->setBold(true)->setUnderline(true)
+    ->setColor(new PHPExcel_Style_Color(PHPExcel_Style_Color::COLOR_BLUE));
 /**
  * 表格的数据的处理
  */
