@@ -10,7 +10,7 @@
 <a href="15.fliptimer.html">时钟效果</a>
 <a href="16.daojishi.html">倒计时</a>
 <a href="17.10second.html">十秒倒计</a>
-
+<div id="now">比较时间</div>
 <p>距离明天还有：</p>
 <div class="dowebok">
 	<div class="hours"></div>
@@ -27,7 +27,8 @@
 $(function(){
 	var d = new Date();
 	var myDate = d.getFullYear() + '/' + (d.getMonth() + 1) + '/' + (d.getDate() + 1) + ' 00:00:00';
-	
+	$("#now").html(myDate);
+
 	$('.dowebok').flipTimer({
 		direction: 'down',
 		date: myDate
