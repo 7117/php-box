@@ -5,8 +5,6 @@ echo $a;
 echo "<br>";
 
 
-
-
 //直接返回当前微秒的时间戳形式
 //要求的是浮点数的形式
 $a=microtime(true);

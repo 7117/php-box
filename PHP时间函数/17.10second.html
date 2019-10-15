@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+	<title>复古翻牌时钟效果</title>
+	<link href="./flipcountdown/css/fliptimer.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+<a href="15.fliptimer.html">时钟效果</a>
+<a href="16.daojishi.html">倒计时</a>
+<a href="17.10second.html">十秒倒计</a>
+<p>10秒倒计时：</p>
+<div class="dowebok">
+	<div class="hours"></div>
+	<div class="minutes"></div>
+	<div class="seconds"></div>
+</div>
+</div>
+</body>
+</html>
+
+<script src="./flipcountdown/js/jquery-1.11.3.min.js"></script>
+<script src="./flipcountdown/js/jquery.fliptimer.js"></script>
+<script>
+$(function(){
+	var d = new Date();
+	var myDate = d.getFullYear() + '/' + (d.getMonth() + 1) + '/' + d.getDate() + ' ' + d.getHours() + ':' + d.getMinutes() + ':' + (d.getSeconds() + 10);
+	
+	$('.dowebok').flipTimer({
+		direction: 'down',
+		date: myDate,
+		callback: function(){
+			alert('倒计时结束！');
+		}
+	});
+});
+</script>

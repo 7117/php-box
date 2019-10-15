@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" type="text/css" href="./datetimepicker/jquery.datetimepicker.css"/>
+    <script src="./datetimepicker/jquery.js"></script>
+    <script src="./datetimepicker/build/jquery.datetimepicker.full.js"></script>
+</head>
+<body>
+<input type="text" value="" id="datetimepicker"/>
+</body>
+<!--http://www.jq22.com/jquery-info332-->
+<script>
+	$.datetimepicker.setLocale('ch');
+    $('#datetimepicker').datetimepicker({
+        dayOfWeekStart: 1,
+        lang: 'en',
+		timepicker:false, 
+		disabledDates: ['2020/04/15'],
+        startDate: '2020/04/15'
+    });
+    $('#datetimepicker').datetimepicker({value: '2020/04/15 12:00', step: 10});
+
+
+</script>
+</html>
