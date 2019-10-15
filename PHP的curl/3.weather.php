@@ -9,7 +9,7 @@ $curl = curl_init();
 curl_setopt($curl, CURLOPT_URL, "http://www.webxml.com.cn/WebServices/WeatherWebService.asmx/getWeatherbyCityName");
 //启用时会将头文件的信息作为数据流输出
 curl_setopt($curl, CURLOPT_HEADER, 0);
-//要转存  参数为1表示$html,为0表示echo $html
+//要转存  参数为1表示$html 要手动输出,为0表示echo $html
 curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
 //设置post方式
 curl_setopt($curl, CURLOPT_POST, 1);
