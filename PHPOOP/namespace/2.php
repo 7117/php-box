@@ -1,7 +1,7 @@
 <?php
 
-namespace PHPOOP;
+// namespace PHPOOP\namespce;
 
 class oos{
-    public $a=1;
+    public $a=5555555555555;
 }

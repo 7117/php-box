@@ -1,9 +1,10 @@
 <?php
 
-namespace PHPOOP;
-include "2.php";
+// namespace PHPOOP\namespce;
+include "../namespace/2.php";
 
-use PHPOOP\oos;
+// use PHPOOP\oos;
+
 class ooc extends oos{
     public $b=1;
 }

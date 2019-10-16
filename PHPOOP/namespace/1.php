@@ -3,7 +3,7 @@
 namespace PHPOOP;
 
 class oop{
-    public $a=1;
+    public $a=11111111;
 }
 
 class ooc extends oop{
