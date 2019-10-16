@@ -8,11 +8,11 @@ $sheet=$excel->getActiveSheet();
 $sheet->mergeCells("B10:H10");
 
 /**
- * 插入文字块
+ * 插入文字块 就是富文本框
  */
 $text=new PHPExcel_RichText();
 $text->createText("文文文文文文");
-//可以添加样式的蚊子块
+//可以添加样式的文字块
 $font=$text->createTextRun("的的的的的的的");
 //添加样式
 $font->getFont()
@@ -49,6 +49,7 @@ $sheet->getCell("B10")->getHyperlink()->setUrl("http://www.baidu.com/");
 $sheet->getStyle("B10:H10")->getFont()
     ->setSize(16)->setBold(true)->setUnderline(true)
     ->setColor(new PHPExcel_Style_Color(PHPExcel_Style_Color::COLOR_BLUE));
+
 /**
  * 表格的数据的处理
  */
