@@ -136,7 +136,10 @@ class PHPExcel_Chart_DataSeries
     /**
      * Create a new PHPExcel_Chart_DataSeries
      */
-    public function __construct($plotType = null, $plotGrouping = null, $plotOrder = array(), $plotLabel = array(), $plotCategory = array(), $plotValues = array(), $plotDirection = null, $smoothLine = null, $plotStyle = null)
+    public function __construct($plotType = null, $plotGrouping = null, $plotOrder = array(),
+                                $plotLabel = array(), $plotCategory = array(),
+                                $plotValues = array(), $plotDirection = null,
+                                $smoothLine = null, $plotStyle = null)
     {
         $this->plotType = $plotType;
         $this->plotGrouping = $plotGrouping;
