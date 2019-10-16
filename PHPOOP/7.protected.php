@@ -3,7 +3,7 @@
 class Human{
     public $name;
 
-    public function eat(){
+    protected function eat(){
         echo "human";
     }
 }
@@ -16,3 +16,6 @@ class Player extends Human {
     }
 }
 
+$a=new Player();
+$a->run();
+$a->eat();
