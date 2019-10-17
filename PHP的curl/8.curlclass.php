@@ -10,11 +10,12 @@ class HttpClient  extends  BaseService{
 
     private static $cookie = null;
 
+    //get请求 地址+参数
     public static function get($url, $param =[]) {
 
         return self::curl($url, $param,"get");
     }
-
+    //post请求  地址+参数
     public static function post($url, $param,$extra = [] ) {
 
         return self::curl($url, $param,"post");
