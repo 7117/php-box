@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>title</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+    <div id="a">a</div>
+    <div id="b">b</div>
+    <button>按钮</button>
+</body>
+</html>
+
+<script>
+    $(document).ready(function(){
+        $("button").click(function(){
+            $.ajax({
+                url:'4.ajax.php',
+                type:'post',
+                data:{"a":"c","b":"b"},
+                success:function(data){
+                    console.log(data);
+                    $("#a").text(data);
+                },
+                error:function(data){
+                    $("#b").text(data);
+                }
+            })
+        })
+    })
+</script>

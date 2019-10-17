@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+    <button>按钮</button>
+</div>
+</body>
+</html>
+
+<script type="text/javascript">
+    $("button").click(function(){
+        var url = "6.demo2.php";
+        var data = {};
+        jQuery.post(url, data, function(response) {
+            //eval是转化为对象了
+            var obj = eval("(" + response + ")");
+            document.write(obj.username);
+            document.write(response);
+        });
+    })
+</script>
