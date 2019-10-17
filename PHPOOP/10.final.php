@@ -1,6 +1,6 @@
 <?php
 
-final class a
+class a
 {
     final public function aaaa()
     {
