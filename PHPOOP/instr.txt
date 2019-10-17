@@ -1,1 +1,1 @@
-interface /abstract /static /magic method /class
+object/class/interface/abstract/static/magic method/
