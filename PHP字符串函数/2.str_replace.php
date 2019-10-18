@@ -21,4 +21,8 @@ var_dump($count2);
 // int(1)
 // string(12) "gvvvvvvvvvvv"
 // int(9)
-
+$category_name1="sswseewcwcwe,ddwdwqd,wdeWWDWE";
+var_dump($category_name1);
+echo "<br>";
+$a=str_replace(",","','",$category_name1);
+var_dump($a);

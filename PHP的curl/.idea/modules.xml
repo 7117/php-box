@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/../.idea/CodePractice.iml" filepath="$PROJECT_DIR$/../.idea/CodePractice.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/PHP的curl.iml" filepath="$PROJECT_DIR$/.idea/PHP的curl.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../bl_offline_replenish/.idea/bl_offline_replenish.iml" filepath="$PROJECT_DIR$/../../bl_offline_replenish/.idea/bl_offline_replenish.iml" />
       <module fileurl="file://D:/github/.idea/github.iml" filepath="D:/github/.idea/github.iml" />
     </modules>
   </component>

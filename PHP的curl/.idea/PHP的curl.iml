@@ -6,5 +6,6 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="github" />
     <orderEntry type="module" module-name="CodePractice" />
+    <orderEntry type="module" module-name="bl_offline_replenish" />
   </component>
 </module>
