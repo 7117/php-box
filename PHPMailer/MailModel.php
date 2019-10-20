@@ -3,6 +3,7 @@
 namespace PHPMailer;
 
 use Nette\Mail\Message;
+use Nette\Mail\SmtpMailer;
 
 class MailModel{
     public $error=0;
@@ -14,6 +15,7 @@ class MailModel{
     }
 
     public function send($id,$title,$contents){
+        header("Content-type: text/html; charset=utf-8");
         $sql="select * from email where id=$id";
         $res=mysqli_query($this->conn,$sql);
         $res=mysqli_fetch_assoc($res);
@@ -24,17 +26,18 @@ class MailModel{
         }
 
         $mail=new Message();
-        $mail->setFrom('孙潇 <sunxiao789@foxmail.com>')
+        $mail->setFrom('孙潇 <jimsun7117@163.com>')
             ->addTo($addr)
             ->setSubject($title)
             ->setBody($contents);
 
-        $mailer = new Nette\Mail\SmtpMailer([
-            'host' => 'smtp.qq.com',
-            'username' => '862890248@qq.com',
-            'password' => 'hhhh6666', /* smtp独立密码 */
+        $mailer = new SmtpMailer([
+            'host' => 'smtp.163.com',
+            'username' => 'jimsun7117@163.com',
+            'password' => 'jim7117', /* smtp独立密码 */
             'secure' => 'ssl',
         ]);
+
         $rep = $mailer->send($mail);
         return true;
 
