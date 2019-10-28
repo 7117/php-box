@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../Book-Emall/.idea/Book-Emall.iml" filepath="$PROJECT_DIR$/../Book-Emall/.idea/Book-Emall.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/CodePractice.iml" filepath="$PROJECT_DIR$/.idea/CodePractice.iml" />
       <module fileurl="file://$PROJECT_DIR$/../bl_offline_replenish/.idea/bl_offline_replenish.iml" filepath="$PROJECT_DIR$/../bl_offline_replenish/.idea/bl_offline_replenish.iml" />
     </modules>
