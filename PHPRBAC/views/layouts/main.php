@@ -63,8 +63,8 @@ AppAsset::register($this);
         <?=$content;?>
         <hr/>
         <footer>
-            <p class="pull-left">@编程浪子郭威</p>
-            <p class="pull-right">Power By 慕课网 www.imooc.com </p>
+            <p class="pull-left">权限功能/p>
+            <p class="pull-right">权限功能</p>
         </footer>
     </div>
 </div>
