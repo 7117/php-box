@@ -3,3 +3,4 @@ session:基本session函数
 clogin:使用cookie验证登录
 slogin:使用session验证登录
 Scustom:使用session自定义mysql会话管理器
+basic：会话的基本函数
