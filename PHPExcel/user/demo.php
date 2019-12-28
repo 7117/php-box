@@ -18,8 +18,8 @@ $activeSheet=$excel->getActiveSheet();
 //设置标题
 $activeSheet->setTitle("demo");
 //设置内容
-$activeSheet->setCellValue("A1","A1")->setCellValue("B1","B1");
-$activeSheet->setCellValue("A2","A1")->setCellValue("B2","B1");
+$activeSheet->setCellValue("A1","内容")->setCellValue("B1","内容");
+$activeSheet->setCellValue("A2","内容")->setCellValue("B2","内容");
 //数组内容
 $arr=[
     [],
