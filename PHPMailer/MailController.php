@@ -5,7 +5,6 @@ use PHPMailer\MailModel;
 
 class MailController
 {
-
     public function sendAction()
     {
         // 获取参数
