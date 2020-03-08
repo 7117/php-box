@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Queue</title>
+</head>
+<body>
+<div id="app">
+    <input type="button" value="button" @click="click">
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+<script>
+    var app = new Vue({
+        el: "#app",
+        data: {},
+        methods: {
+            click: function () {
+                axios.get("https://autumnfish.cn/api/joke").then(function (response) {
+                    console.log(response);
+                }, function (err) {
+
+                })
+            }
+        }
+    })
+</script>
+
+</body>
+</html>
+
