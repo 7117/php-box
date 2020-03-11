@@ -1,5 +1,6 @@
 <?php
 
+$time1 = microtime(true);
 // Import PHPMailer classes into the global namespace
 // These must be at the top of your script, not inside a function
 use PHPMailer\PHPMailer\PHPMailer;
@@ -26,12 +27,16 @@ try {
     //Recipients
     $mail->setFrom('jimsun7117@163.com', '');     //发件人
     $mail->addAddress('862890248@qq.com', '');          //收件人
+    $mail->addAddress('sunxiao789@foxmail.com', '');          //收件人
+    $mail->addAddress('qinglangsalaheiyou@163.com', '');          //收件人
+    $mail->addAddress('jimsun7117@163.com', '');          //收件人
+    $mail->addAddress('18701558590@139.com ', '');          //收件人
     // $mail->addReplyTo('sunxiao789@foxmail.com', '孙潇');    //回复
     // $mail->addCC('cc@example.com');                                //抄送
     // $mail->addBCC('bcc@example.com');                        //密送
 
     // Attachments
-    $mail->addAttachment('./queue.xlsx');         // Add attachments
+    $mail->addAttachment('./1.xls','我是.xls');         // Add attachments
 
     // Content
     $mail->isHTML(true);                                  // Set email format to HTML
@@ -40,7 +45,9 @@ try {
     $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
     $mail->send();
-    echo 'Message has been sent';
+    $time2 = microtime(true);
+    $time = $time2 - $time1;
+    echo $time;
 } catch (Exception $e) {
     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
 }
