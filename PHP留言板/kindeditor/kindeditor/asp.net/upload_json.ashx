@@ -1,4 +1,4 @@
-﻿<%@ webhandler Language="C#" class="Upload" %>
+<%@ webhandler Language="C#" class="Upload" %>
 
 /**
  * KindEditor ASP.NET

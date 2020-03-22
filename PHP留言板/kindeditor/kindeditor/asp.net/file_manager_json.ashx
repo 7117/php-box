@@ -1,4 +1,4 @@
-﻿<%@ webhandler Language="C#" class="FileManager" %>
+<%@ webhandler Language="C#" class="FileManager" %>
 
 /**
  * KindEditor ASP.NET
