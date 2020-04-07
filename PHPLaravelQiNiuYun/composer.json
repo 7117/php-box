@@ -1,0 +1,5 @@
+{
+    "require": {
+        "itbdw/laravel-storage-qiniu": "^1.1"
+    }
+}

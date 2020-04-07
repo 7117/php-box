@@ -1,0 +1,42 @@
+{
+  "name": "itbdw/laravel-storage-qiniu",
+  "type": "library",
+  "description": "A storage library for laravel5 and qiniu sdk",
+  "keywords": [
+    "laravel5",
+    "qiniu",
+    "storage",
+    "sdk",
+    "cloud",
+    "laravel"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "zgldh",
+      "email": "zgldh@hotmail.com",
+      "role": "Original Developer"
+    },
+    {
+      "name": "itbdw",
+      "email": "itbudaoweng@gmail.com",
+      "role": "Developer",
+      "homepage": "http://github.com/itbdw"
+    },
+    {
+      "name": "popfeng",
+      "email": "popfeng@yeah.net",
+      "role": "Developer",
+      "homepage": "http://github.com/popfeng"
+    }
+  ],
+  "require": {
+    "php": ">=5.3.3",
+    "qiniu/php-sdk": "^7.2.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "itbdw\\QiniuStorage\\": "src/"
+    }
+  }
+}
