@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>websocket client</title>
+    <style type="text/css">
+        .container {
+            border: #ccc solid 1px;
+        }
+        .up {
+            width: 100%;
+            height: 200px;
+        }
+        .down {
+            width: 100%;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="up" id="chatrecord">
+    </div>
+    <hr>
+    <div class="down">
+        聊天类型：
+        <select id="chattype">
+            <option value="publicchat">公聊</option>
+            <option value="privatechat">私聊</option>
+        </select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        对
+        <select id="chatto">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+        </select>
+        说:<input type="text" id="chatmsg" placeholder="随便来一发吧~">
+        <input type="button" id="btnsend" value="发送" onclick="sendMsg()">
+    </div>
+</div>
+</body>
+<script src="http://libs.baidu.com/jquery/2.1.4/jquery.min.js"></script>
+<script type="text/javascript">
+    var ws;
+    $(function(){
+        connect();
+    });
+    function echo(id, msg) {
+        console.log(msg);
+        $(id).append("<p>"+msg+"</p>");
+    }
+    function connect() {
+        ws = new WebSocket("ws://47.104.64.90:22223");
+        //ws.onopen = function(event) {echo("#chatrecord", event);}
+        //ws.onclose = function(event) {echo("#chatrecord", event);}
+        //ws.onerror = function(event) {echo("#chatrecord", event);}
+        ws.onmessage = function(event) {
+            echo("#chatrecord", event.data);
+        }
+    }
+    function sendMsg() {
+        var chatmsg = $("#chatmsg").val();
+        var chattype = $("#chattype").val();
+        var chatto = $("#chatto").val();
+        var msg = JSON.stringify({"chattype":chattype, "chatto":chatto, "chatmsg":chatmsg});
+        if(msg != "" && chatmsg !=""){
+            ws.send(msg);
+            $("#chatmsg").val("");
+        }
+    }
+
+</script>
+</html>
