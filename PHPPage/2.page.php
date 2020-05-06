@@ -3,8 +3,7 @@
 
 $p = isset($_GET['p'])?$_GET['p']:1;
 
-$limit = ($p - 1) * 2;
-$offset = 2;
+
 
 define('host', '127.0.0.1');
 define('user', 'root');
@@ -14,16 +13,19 @@ define('port', 3306);
 
 $db = new mysqli(host, user, pwd, db, port);
 
+
+$limit = ($p - 1) * 2;
+$offset = 2;
 $sql = 'select * from www_message' . " limit $limit,$offset";
 $result = mysqli_query($db, $sql);
+$info = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+
+
 $sql2 = 'select count(*) from www_message';
 $result2 = mysqli_query($db, $sql2);
 $info2 = mysqli_fetch_all($result2, MYSQLI_NUM);
 $info2 = $info2[0][0];
-
-// 获取数据
-$info = mysqli_fetch_all($result, MYSQLI_ASSOC);
-
 
 echo '<table border="1px">';
 echo '<tr>';
