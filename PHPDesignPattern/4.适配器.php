@@ -34,6 +34,7 @@ class Adaptee
 
 /**
  * 类适配器角色
+ * 在适配器里面进行丰富主体定义的方法
  */
 class Adapter implements Target
 {
@@ -63,19 +64,14 @@ class Adapter implements Target
 
 }
 
-class Client
-{
+$adaptee = new Adaptee();
+$adapter = new Adapter($adaptee);
+$one = $adapter->sampleMethod1();
+var_dump($one);
+$two = $adapter->sampleMethod2();
+var_dump($two);
 
-    /**
-     * Main program.
-     */
-    public static function main()
-    {
-        $adaptee = new Adaptee();
-        $adapter = new Adapter($adaptee);
-        $adapter->sampleMethod1();
-        $adapter->sampleMethod2();
-
-    }
-
-}
+// Adaptee sampleMethod1
+// D:\phpstudy\PHPTutorial\WWW\phpCollection\PHPDesignPattern\4.适配器.php:70:null
+// Adapter sampleMethod2
+// D:\phpstudy\PHPTutorial\WWW\phpCollection\PHPDesignPattern\4.适配器.php:72:null
