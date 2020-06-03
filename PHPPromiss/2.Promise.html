@@ -1,0 +1,26 @@
+<div id="btn">ANNIU</div>
+<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script>
+
+    function func1(input) {
+        return new Promise(function (resolve, reject) {
+            console.log('func1');
+            setTimeout(resolve, 5, input * input);
+        });
+    }
+
+    function func2(input) {
+        return new Promise(function (resolve, reject) {
+            console.log('func2');
+            setTimeout(resolve, 10, input + input);
+        });
+    }
+
+    var p = new Promise(function (resolve, reject) {
+        console.log('start');
+    });
+
+    p.then(func1).then(func2);
+
+</script>
