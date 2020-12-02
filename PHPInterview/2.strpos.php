@@ -24,12 +24,14 @@ function strposBySelf($strA, $strB)
 }
 
 $strA = "abcdefg";
-$strB = "abc";
+$strB = "def";
 $res = strposBySelf($strA, $strB);
 
-if (empty($res)) {
+if (is_null($res)) {
     echo "NO MATCH";
 } else {
     echo implode($res);
 }
 
+
+print_r("11");
